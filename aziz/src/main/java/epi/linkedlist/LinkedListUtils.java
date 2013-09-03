@@ -6,7 +6,7 @@ package epi.linkedlist;
  * Date: 9/1/13
  * Time: 2:46 PM
  */
-public class LinkedListUtil {
+public class LinkedListUtils {
 
     public static <T extends Comparable<T>> Node<T> merge(Node<T> a, Node<T> b) {
         Node<T> head_c = null, c = null, tmp;

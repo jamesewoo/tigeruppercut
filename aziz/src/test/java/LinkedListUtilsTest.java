@@ -1,4 +1,4 @@
-import epi.linkedlist.LinkedListUtil;
+import epi.linkedlist.LinkedListUtils;
 import epi.linkedlist.Node;
 import org.junit.Test;
 
@@ -8,7 +8,7 @@ import org.junit.Test;
  * Date: 9/1/13
  * Time: 2:56 PM
  */
-public class LinkedListTest {
+public class LinkedListUtilsTest {
 
     @Test
     public void test() {
@@ -26,7 +26,7 @@ public class LinkedListTest {
             prev = b;
         }
 
-        Node<Integer> c = LinkedListUtil.merge(a, b);
+        Node<Integer> c = LinkedListUtils.merge(a, b);
         while (c != null) {
             System.out.println(c.getData());
             c = c.getNext();
