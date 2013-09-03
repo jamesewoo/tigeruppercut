@@ -1,4 +1,5 @@
-import epi.primitive.BitUtils;
+package epi.primitive;
+
 import org.junit.Test;
 
 import java.math.BigInteger;

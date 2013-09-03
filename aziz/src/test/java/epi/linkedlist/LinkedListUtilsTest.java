@@ -1,3 +1,5 @@
+package epi.linkedlist;
+
 import epi.linkedlist.LinkedListUtils;
 import epi.linkedlist.Node;
 import org.junit.Test;
