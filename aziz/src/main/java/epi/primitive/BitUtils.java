@@ -8,7 +8,7 @@ package epi.primitive;
  */
 public class BitUtils {
 
-    private byte[] parityLookup;
+    private final byte[] parityLookup;
 
     public BitUtils() {
         parityLookup = new byte[256];

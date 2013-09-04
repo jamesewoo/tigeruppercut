@@ -16,7 +16,7 @@ public class ArrayUtils {
     // 1,0,2,2,7 eq = 3, be = 2
     // 1,0,2,2,7 eq = 4
 
-    public static int[] partition(int[] arr, int index) {
+    public static void partition(int[] arr, int index) {
         int begin = 0, equals = 0, end = arr.length - 1;
         int t = arr[index];
         while (equals <= end) {
@@ -28,7 +28,6 @@ public class ArrayUtils {
                 swap(arr, equals, end--);
             }
         }
-        return arr;
     }
 
     static void swap(int[] arr, int i, int j) {
