@@ -9,8 +9,9 @@ package epi.tree;
 public class BinaryTree<T> {
 
     private T data;
-
-    private BinaryTree<T> left, right;
+    private BinaryTree<T> left;
+    private BinaryTree<T> right;
+    private BinaryTree<T> parent;
 
     public BinaryTree() {
     }
@@ -19,7 +20,53 @@ public class BinaryTree<T> {
         this.data = data;
     }
 
+    void inorderRecursive() {
+        if (left != null)
+            left.inorderRecursive();
+        System.out.println(data);
+        if (right != null)
+            right.inorderRecursive();
+    }
+
     void inorderTraversal() {
+        BinaryTree<T> n = this;
+        BinaryTree<T> prev = null;
+        boolean down = true;
+        while (n != null) {
+            if (down) {
+                if (n.left != null) {
+                    n = n.left;
+                } else if (n.right != null) {
+                    System.out.println(n.data);
+                    n = n.right;
+                } else {    // n is leaf node
+                    down = false;
+                }
+            } else {
+                if (n.parent == null) {
+                    return;
+                } else if (n == n.parent.left) {
+                    if (prev == null || prev != n.right) {
+                        System.out.println(n.data);
+                        prev = null;
+                    }
+                    n = n.parent;
+                    if (n.right != null) {
+                        System.out.println(n.data);
+                        n = n.right;
+                        down = true;
+                    }
+                } else {
+                    if (n.left == null & n.right == null)
+                        System.out.println(n.data);
+                    prev = n;
+                    n = n.parent;
+                }
+            }
+        }
+    }
+
+    void morrisTraversal() {
         BinaryTree<T> n = this;
         while (n != null) {
             if (n.left != null) {
@@ -68,5 +115,13 @@ public class BinaryTree<T> {
 
     public void setRight(BinaryTree<T> right) {
         this.right = right;
+    }
+
+    public BinaryTree<T> getParent() {
+        return parent;
+    }
+
+    public void setParent(BinaryTree<T> parent) {
+        this.parent = parent;
     }
 }

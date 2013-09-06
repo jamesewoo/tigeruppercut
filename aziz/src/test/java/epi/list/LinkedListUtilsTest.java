@@ -1,4 +1,4 @@
-package epi.linkedlist;
+package epi.list;
 
 import org.junit.Test;
 

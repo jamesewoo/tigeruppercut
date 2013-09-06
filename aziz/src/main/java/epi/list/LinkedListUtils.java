@@ -1,4 +1,4 @@
-package epi.linkedlist;
+package epi.list;
 
 /**
  * Created with IntelliJ IDEA.
