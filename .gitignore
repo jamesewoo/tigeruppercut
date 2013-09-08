@@ -6,6 +6,8 @@
 *.ear
 
 .idea
-**/*.iml
+*.iml
+*.ipr
+*.iws
 
 target
