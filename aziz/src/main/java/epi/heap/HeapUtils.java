@@ -11,7 +11,7 @@ import java.util.*;
 public class HeapUtils {
 
     public <T extends Comparable<T>> List<T> merge(List<Iterator<T>> vectors) {
-        PriorityQueue<Entry<T>> heap = new PriorityQueue<>(vectors.size(), new Comparator<Entry<T>>() {
+        Queue<Entry<T>> heap = new PriorityQueue<>(vectors.size(), new Comparator<Entry<T>>() {
             @Override
             public int compare(Entry<T> o1, Entry<T> o2) {
                 return o1.getValue().compareTo(o2.getValue());
