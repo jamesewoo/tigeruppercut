@@ -35,8 +35,8 @@ public class HeapUtils {
     }
 
     private class Entry<T> {
-        private int index;
-        private T value;
+        private final int index;
+        private final T value;
 
         public Entry(int index, T value) {
             this.index = index;
