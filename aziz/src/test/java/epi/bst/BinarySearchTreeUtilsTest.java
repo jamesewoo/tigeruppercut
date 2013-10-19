@@ -2,6 +2,7 @@ package epi.bst;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -49,5 +50,13 @@ public class BinarySearchTreeUtilsTest {
 
         BinarySearchTreeUtils<Integer> utils = new BinarySearchTreeUtils<>();
         assertTrue(utils.verify(b19));
+
+        b31.setRight(new BinarySearchTree<>(30));
+        assertFalse(utils.verify(b19));
+
+        b31.setRight(null);
+        assertTrue(utils.verify(b19));
+        b31.setLeft(new BinarySearchTree<>(32));
+        assertFalse(utils.verify(b19));
     }
 }
