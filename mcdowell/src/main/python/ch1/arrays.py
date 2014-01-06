@@ -42,3 +42,22 @@ def replace_spaces(array, end):
         else:
             array[i+rshift] = array[i]
     return "".join(array)
+
+def compress(string):
+    if len(string) == 0:
+        return ""
+    lastchar = string[0]
+    count = 0
+    result = []
+    for c in string:
+        if c != lastchar:
+            result.extend([lastchar, str(count)])
+            lastchar = c
+            count = 1
+        else:
+            count += 1
+    result.extend([lastchar, str(count)])
+    if len(string) < len(result):
+        return string
+    else:
+        return "".join(result)
